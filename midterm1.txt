@@ -1,0 +1,214 @@
+
+Reza@Reza-VAIO MINGW64 ~/desktop
+$ mkdir git-test
+
+Reza@Reza-VAIO MINGW64 ~/desktop
+$ cd git-test
+
+Reza@Reza-VAIO MINGW64 ~/desktop/git-test
+$ git init
+Initialized empty Git repository in C:/Users/Reza/Desktop/git-test/.git/
+
+Reza@Reza-VAIO MINGW64 ~/desktop/git-test (master)
+$ git config --global user.name "reza"
+
+Reza@Reza-VAIO MINGW64 ~/desktop/git-test (master)
+$ git config --global user.email "reza.maziar@gmail.com"
+
+Reza@Reza-VAIO MINGW64 ~/desktop/git-test (master)
+$ touch main.txt
+
+Reza@Reza-VAIO MINGW64 ~/desktop/git-test (master)
+$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        main.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Reza@Reza-VAIO MINGW64 ~/desktop/git-test (master)
+$ git add main.txt
+
+Reza@Reza-VAIO MINGW64 ~/desktop/git-test (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   main.txt
+
+
+Reza@Reza-VAIO MINGW64 ~/desktop/git-test (master)
+$ git commit main.txt -m "new file"
+[master (root-commit) 0a8af5b] new file
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 main.txt
+
+Reza@Reza-VAIO MINGW64 ~/desktop/git-test (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+Reza@Reza-VAIO MINGW64 ~/desktop/git-test (master)
+$ nano main.txt
+
+Reza@Reza-VAIO MINGW64 ~/desktop/git-test (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   main.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Reza@Reza-VAIO MINGW64 ~/desktop/git-test (master)
+$ git add main.txt
+warning: in the working copy of 'main.txt', LF will be replaced by CRLF the next time Git touches it
+
+Reza@Reza-VAIO MINGW64 ~/desktop/git-test (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   main.txt
+
+
+Reza@Reza-VAIO MINGW64 ~/desktop/git-test (master)
+$ git commit main.txt -m "line 1 edited"
+warning: in the working copy of 'main.txt', LF will be replaced by CRLF the next time Git touches it
+[master 4d6db5a] line 1 edited
+ 1 file changed, 2 insertions(+)
+
+Reza@Reza-VAIO MINGW64 ~/desktop/git-test (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+Reza@Reza-VAIO MINGW64 ~/desktop/git-test (master)
+$ nano main.txt
+
+Reza@Reza-VAIO MINGW64 ~/desktop/git-test (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   main.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Reza@Reza-VAIO MINGW64 ~/desktop/git-test (master)
+$ git add main.txt
+warning: in the working copy of 'main.txt', LF will be replaced by CRLF the next time Git touches it
+
+Reza@Reza-VAIO MINGW64 ~/desktop/git-test (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   main.txt
+
+
+Reza@Reza-VAIO MINGW64 ~/desktop/git-test (master)
+$ git commit -m "line 2 edited"
+[master 042195c] line 2 edited
+ 1 file changed, 1 insertion(+)
+
+Reza@Reza-VAIO MINGW64 ~/desktop/git-test (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+Reza@Reza-VAIO MINGW64 ~/desktop/git-test (master)
+$ touch test.txt
+
+Reza@Reza-VAIO MINGW64 ~/desktop/git-test (master)
+$ nano test.txt
+
+Reza@Reza-VAIO MINGW64 ~/desktop/git-test (master)
+$ git add test.txt
+warning: in the working copy of 'test.txt', LF will be replaced by CRLF the next time Git touches it
+
+Reza@Reza-VAIO MINGW64 ~/desktop/git-test (master)
+$ git commit test.txt -m "new file"
+warning: in the working copy of 'test.txt', LF will be replaced by CRLF the next time Git touches it
+[master f8001f9] new file
+ 1 file changed, 5 insertions(+)
+ create mode 100644 test.txt
+
+Reza@Reza-VAIO MINGW64 ~/desktop/git-test (master)
+$ nano test.txt
+
+Reza@Reza-VAIO MINGW64 ~/desktop/git-test (master)
+$ git diff test.txt
+warning: in the working copy of 'test.txt', LF will be replaced by CRLF the next time Git touches it
+diff --git a/test.txt b/test.txt
+index 42c3a0f..4cb5f3e 100644
+--- a/test.txt
++++ b/test.txt
+@@ -1,5 +1,6 @@
+-test1
+ test2
+-test3
+ test4
++test5
++test6
++
+
+Reza@Reza-VAIO MINGW64 ~/desktop/git-test (master)
+$ git log
+commit f8001f986ca35156fec197e0ebfb5537b5d69495 (HEAD -> master)
+Author: reza <reza.maziar>
+Date:   Sun Aug 18 09:36:51 2024 +0430
+
+    new file
+
+commit 042195c29b06613925ab10b2dea38977f31eefe2
+Author: reza <reza.maziar>
+Date:   Sun Aug 18 09:33:58 2024 +0430
+
+    line 2 edited
+
+commit 4d6db5a6c9ccdabbc43808ba96962b62bf1a99ea
+Author: reza <reza.maziar>
+Date:   Sun Aug 18 09:32:41 2024 +0430
+
+    line 1 edited
+
+commit 0a8af5b69a135c2b30949bf426bf6423ae1aa296
+Author: reza <reza.maziar>
+Date:   Sun Aug 18 09:29:36 2024 +0430
+
+    new file
+:
+commit f8001f986ca35156fec197e0ebfb5537b5d69495 (HEAD -> master)
+Author: reza <reza.maziar>
+Date:   Sun Aug 18 09:36:51 2024 +0430
+
+    new file
+
+commit 042195c29b06613925ab10b2dea38977f31eefe2
+Author: reza <reza.maziar>
+Date:   Sun Aug 18 09:33:58 2024 +0430
+
+    line 2 edited
+
+commit 4d6db5a6c9ccdabbc43808ba96962b62bf1a99ea
+Author: reza <reza.maziar>
+Date:   Sun Aug 18 09:32:41 2024 +0430
+
+    line 1 edited
+
+commit 0a8af5b69a135c2b30949bf426bf6423ae1aa296
+Author: reza <reza.maziar>
+Date:   Sun Aug 18 09:29:36 2024 +0430
+
+    new file
+:
